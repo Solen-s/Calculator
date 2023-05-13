@@ -1,0 +1,98 @@
+*{
+    background-color: var(--background-color);
+    margin: auto;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-width: 350px;
+    height: 100%;
+}
+
+#result{ 
+    outline: none;
+    background-color: #ffffff23;
+    color: #ffffff;
+    text-align: end;
+    padding: 10px;
+    width: 350px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* border: none; */
+    border-color: rgba(240, 248, 255, 0.352);
+    border-radius: 15px;
+    font-size: 2.5rem;
+}
+
+.keyboard {
+    width: 350px;
+    height: 350px;
+}
+
+.keyboard .row{
+    display: flex;
+    height: 20%;
+}
+
+button{
+    -webkit-user-select: none;   /* Safari */
+    -ms-user-select: none;  /* IE 10 and IE 11 */
+    user-select: none;  /* Standard syntax */
+
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21%;
+    height: 86%;
+    flex: 0 0 21%;
+    border-radius: 50%;
+}
+
+/*  FRIST ROW   */
+.keyboard .row:first-child button:not(:last-child){
+    background-color: var(--fun-key);
+}
+
+.keyboard .row:first-child button:last-child{
+    background-color: var(--operator);
+    color: #ffffff;
+}
+
+/*  2SE, 3TR, 4TH AND 5TH ROW   */
+.keyboard .row:nth-child(2) button:not(:last-child),
+.keyboard .row:nth-child(3) button:not(:last-child),
+.keyboard .row:nth-child(4) button,
+.keyboard .row:nth-child(5) button:not(:last-child) {
+    background-color: var(--digital-key);
+    color: #ffffff;
+}
+
+.keyboard .row:nth-child(2) button:last-child,
+.keyboard .row:nth-child(3) button:last-child{
+    background-color: var(--operator);   
+    color: #ffffff;
+}
+
+.keyboard .row:nth-child(5) button{
+    color: #ffffff;
+    background-color: var(--operator);  
+    display: flex;
+    justify-content: center;
+    /* width: 100%; */
+    flex: 1;
+    border-radius: 40px;
+}
+
+:root{
+    --background-color: black;
+    --operator: #FF9500;
+    --fun-key: #a2a2a2;
+    --digital-key: #505050;
+}
